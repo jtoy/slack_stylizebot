@@ -23,13 +23,30 @@ def handle_command(command, channel):
     """
     response = "Not sure what you mean. Use the *" + EXAMPLE_COMMAND + \
                "* command with numbers, delimited by spaces."
-    if command.startswith(EXAMPLE_COMMAND):
-        image_url = command.split(' ')[1]
-        stylize_ids=['gZDA63Ex','9kgYo1Zp','MZJNYmZY','MkeLoMEg','lEVv8vEB','2kRl49ZW','oEG3P0ER','Bka9oBkM','zZP0evZ0','VEqz4xkx','8k8aLmnM','LnL71DkK','DkMl3OEg','zZP0RvZ0','MZJN75ZY','yE72lBZm','Kkb1r4EO','7E9r2WkR','VEqzYpkx','LnL7oLkK','7ZxJo3k9']
-        stylize_id=random.choice(stylize_ids)
-        response = 'http://convert.somatic.io/api/v1.2/cdn-query?id='+stylize_id+'&api_key='+somatic_api_key+'&--input='+image_url[1:-1]
-    slack_client.api_call("chat.postMessage", channel=channel,
-                          text=response, as_user=True)
+
+    print(command)
+
+    if command.startswith("help"):
+        response = "Send me a command 'stylize IMAGE_URL' to stylize the image in a random style. Or you can pick a style from http://www.somatic.io/models/list and say 'stylize IMAGE_URL STYLE_ID'" 
+        slack_client.api_call("chat.postMessage", channel=channel,text=response, as_user=True)
+    elif command.startswith(EXAMPLE_COMMAND):
+        print("ASDSDASDAS")
+        print(command)
+
+        command_data = command.split(' ')
+        print(command_data)
+
+        if len(command_data) >= 2:
+            image_url = command_data[1]
+            # if len(command_data) >= 3:
+            #     stylize_id = command_data[2]
+            # else:
+            stylize_ids=['gZDA63Ex','9kgYo1Zp','MZJNYmZY','MkeLoMEg','lEVv8vEB','2kRl49ZW','oEG3P0ER','Bka9oBkM','zZP0evZ0','VEqz4xkx','8k8aLmnM','LnL71DkK','DkMl3OEg','zZP0RvZ0','MZJN75ZY','yE72lBZm','Kkb1r4EO','7E9r2WkR','VEqzYpkx','LnL7oLkK','7ZxJo3k9']
+            stylize_id=random.choice(stylize_ids)
+            response = 'http://convert.somatic.io/api/v1.2/cdn-query?id='+stylize_id+'&api_key='+somatic_api_key+'&--input='+image_url[1:-1]
+            slack_client.api_call("chat.postMessage", channel=channel,text=response, as_user=True)
+    else:
+        slack_client.api_call("chat.postMessage", channel=channel,text=response, as_user=True)
 
 
 def parse_slack_output(slack_rtm_output):
