@@ -13,7 +13,7 @@ source name_of_your_bot/bin/activate
 ```
 ### Step 3: Install dependencies in your environment
 `pip install slackclient pyopenssl ndg-httpsclient pyasn1`
-### Step 4: Create a bot on api.slack.com
+### Step 4: Create a bot token at api.slack.com
 Please follow: https://www.fullstackpython.com/blog/build-first-slack-bot-python.html
 ### Step 5: Put two python file into yout bot folder
 Copy print_bot_id.py and slack_stylizebot.py into name_of_your_bot.
