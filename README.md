@@ -4,9 +4,13 @@
 `$ [sudo] pip install virtualenv`
 Use sudo if there's permission issue.
 ### Step 2: Establishing the environment
-`virtualenv name_of_your_bot`
+```
+virtualenv name_of_your_bot
+```
 This command will generate a virtualenv only for your bot. Active it using the command below:
-`source name_of_your_bot/bin/activate`
+```
+source name_of_your_bot/bin/activate
+```
 ### Step 3: Install dependencies in your environment
 `pip install slackclient pyopenssl ndg-httpsclient pyasn1`
 ### Step 4: Create a bot on api.slack.com
