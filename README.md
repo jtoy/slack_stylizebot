@@ -25,6 +25,6 @@ export BOT_ID='bot id returned by python print_bot_id.py'
 ```
 ### Step 7: Run the bot and play with it
 `python starterbot.py`
-This command above will start the bot. Play with it in the slak!
+This command above will start the bot. Play with it in slack!
 ##Notice
-When pass image link to the bot, make sure the link is a real image.
+When passing an image link to the bot, make sure the link is a real image.
