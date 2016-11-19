@@ -24,7 +24,7 @@ export SLACK_BOT_TOKEN='your slack token pasted here'
 export BOT_ID='bot id returned by python print_bot_id.py'
 ```
 ### Step 7: Run the bot and play with it
-`python starterbot.py`
+`python slack_stylizebot.py`
 This command above will start the bot. Play with it in slack!
 ##Notice
 When passing an image link to the bot, make sure the link is a real image.
