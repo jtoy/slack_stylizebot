@@ -27,7 +27,7 @@ def handle_command(command, channel):
     print(command)
 
     if command.startswith("help"):
-        response = "Send me a command 'stylize IMAGE_URL' to stylize the image in a random style. Or you can pick a style from http://www.somatic.io/models/list and say 'stylize IMAGE_URL STYLE_ID'" 
+        response = "Send me a command 'stylize IMAGE_URL' to stylize the image in a random style. Or you can pick a style from http://www.somatic.io/models/list and say 'stylize IMAGE_URL STYLE_ID'"
         slack_client.api_call("chat.postMessage", channel=channel,text=response, as_user=True)
     elif command.startswith(EXAMPLE_COMMAND):
         print("ASDSDASDAS")
@@ -60,7 +60,7 @@ def parse_slack_output(slack_rtm_output):
         for output in output_list:
             if output and 'text' in output and AT_BOT in output['text']:
                 # return text after the @ mention, whitespace removed
-                return output['text'].split(AT_BOT)[1].strip().lower(), \
+                return output['text'].split(AT_BOT)[1].strip(), \
                        output['channel']
     return None, None
 
