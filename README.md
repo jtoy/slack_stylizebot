@@ -17,6 +17,10 @@ source name_of_your_bot/bin/activate
 Please follow: https://www.fullstackpython.com/blog/build-first-slack-bot-python.html
 ### Step 5: Put two python file into yout bot folder
 Copy print_bot_id.py and slack_stylizebot.py into name_of_your_bot.
+Change the BOT_NAME to yours in this line of print_bot_id.py.
+```
+BOT_NAME = 'somatic-stylebot'
+```
 ### Step 6: Set up environment variables
 ```
 export SOMATIC_API_KEY='your somatic_api_key pasted here'
