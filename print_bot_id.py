@@ -2,7 +2,7 @@ import os
 from slackclient import SlackClient
 
 
-BOT_NAME = 'stylizebot'
+BOT_NAME = 'somatic-stylebot'
 
 slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
 
